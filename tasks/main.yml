@@ -1,5 +1,11 @@
 ---
 - include: install.yml
+  tags: haproxy_install
 
 - include: configure.yml
   when: haproxy_manage_config
+  tags: haproxy_config
+
+- include: logging.yml
+  when: haproxy_manage_config
+  tags: haproxy_logging
